@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="82ea7d7e-ac3d-4005-aa35-e4363f122844" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/logbert/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/.vs/PythonSettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/.vs/VSWorkspaceState.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/.vs/deeplog/v16/.suo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/.vs/slnx.sqlite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/BGL/dataAnalysis-logs.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/BGL/dataAnalysis.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/BGL/data_process.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/BGL/deeplog.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/BGL/loganomaly.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/BGL/logbert.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/BGL/logbert.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/BGL/logkey_time.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/BGL/logtransformer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/BGL/result_analysis.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/HDFS/data_process.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/HDFS/data_process0.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/HDFS/hdfs_data_process.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/HDFS/hdfs_deeplog.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/HDFS/hdfs_parser.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/OpenStack/const.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/OpenStack/data_process.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/OpenStack/data_process2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/OpenStack/data_view.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/OpenStack/openstack_deeplog.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/OpenStack/openstack_parser.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/Spirit/data_process.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/TBird/data_analysis.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/TBird/data_process.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/__main__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/build_vocab.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/dataset/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/dataset/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/dataset/dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/dataset/dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/dataset/log_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/dataset/log_dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/dataset/sample.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/dataset/sample.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/dataset/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/dataset/vocab.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/dataset/vocab.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/attention/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/attention/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/attention/multi_head.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/attention/multi_head.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/attention/single.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/attention/single.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/bert.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/bert.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/embedding/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/embedding/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/embedding/bert.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/embedding/bert.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/embedding/position.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/embedding/position.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/embedding/segment.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/embedding/segment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/embedding/time_embed.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/embedding/time_embed.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/embedding/token.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/embedding/token.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/language_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/language_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/log_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/log_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/transformer.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/transformer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/utils/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/utils/feed_forward.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/utils/feed_forward.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/utils/gelu.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/utils/gelu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/utils/layer_norm.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/utils/layer_norm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/utils/sublayer.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/utils/sublayer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/predict.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/predict_log.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/predict_log.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/train.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/train_log.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/train_log.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/trainer/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/trainer/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/trainer/optim_schedule.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/trainer/optim_schedule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/trainer/pretrain.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/trainer/pretrain.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/demo/HDFS_demo.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/demo/Spell_demo.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/demo/deeplog_demo.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/demo/openstack.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/demo/openstack_demo.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/logdeep/dataset/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/logdeep/dataset/corpus.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/logdeep/dataset/feature_extraction.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/logdeep/dataset/log.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/logdeep/dataset/sample.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/logdeep/dataset/session.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/logdeep/dataset/vocab.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/logdeep/models/lstm.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/logdeep/models/transformer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/logdeep/tools/predict.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/logdeep/tools/train.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/logdeep/tools/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/logparser/Drain.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/logparser/Spell.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/logparser/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/test.py" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/logbert" />
+  </component>
+  <component name="ProjectId" id="1l1Jtti4YblYlMUfTzRxzD0RWkL" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="PyDebuggerOptionsProvider">
+    <option name="mySupportGeventDebugging" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/scripts/hdfs" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/" />
+      <recent name="$PROJECT_DIR$/dataset" />
+      <recent name="$PROJECT_DIR$/logbert/" />
+      <recent name="$PROJECT_DIR$/common" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.main_logdeep">
+    <configuration name="data_process" type="PythonConfigurationType" factoryName="Python">
+      <module name="logbert" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_process.py" />
+      <option name="PARAMETERS" value="--dataset_name=hdfs_2k --log_file=HDFS_2k.log --parser_type=drain --log_format=Date,Time,Pid,Level,Component,Content --window_type=session" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="downloads" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="logbert" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/logbert/dataset" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/logbert/dataset/downloads.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main_logbert" type="PythonConfigurationType" factoryName="Python">
+      <module name="logbert" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/logbert" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main_logbert.py" />
+      <option name="PARAMETERS" value="--dataset_name bgl_2k --is_logkey" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main_logdeep" type="PythonConfigurationType" factoryName="Python">
+      <module name="logbert" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main_logdeep.py" />
+      <option name="PARAMETERS" value="--dataset_name hdfs_2k --output_dir &quot;~/.output/&quot; --model_dir &quot;hdfs_2k_deeplog_candidates_6&quot; --model_name loganomaly --quantitatives true" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main_run" type="PythonConfigurationType" factoryName="Python">
+      <module name="logbert" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/logbert" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main_run.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.data_process" />
+      <item itemvalue="Python.main_run" />
+      <item itemvalue="Python.main_logbert" />
+      <item itemvalue="Python.main_logdeep" />
+      <item itemvalue="Python.downloads" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.downloads" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="82ea7d7e-ac3d-4005-aa35-e4363f122844" name="Default Changelist" comment="" />
+      <created>1606758881982</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606758881982</updated>
+      <workItem from="1606758885744" duration="6543000" />
+      <workItem from="1606782139180" duration="14372000" />
+      <workItem from="1606930665681" duration="34993000" />
+      <workItem from="1609805628487" duration="419000" />
+      <workItem from="1612909700346" duration="102000" />
+      <workItem from="1617638722246" duration="352000" />
+      <workItem from="1617675057049" duration="3000" />
+      <workItem from="1622321971285" duration="3724000" />
+      <workItem from="1623160022160" duration="8000" />
+      <workItem from="1624911179184" duration="14653000" />
+      <workItem from="1624932341762" duration="33888000" />
+      <workItem from="1625519197594" duration="1511000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/logbert/_dataset/downloads.py</url>
+          <line>31</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/logbert/_dataset/downloads.py</url>
+          <line>34</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/dataset/_data_process.py</url>
+          <line>122</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/dataset/_data_process.py</url>
+          <line>50</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/logbert/bert_pytorch/trainer/pretrain.py</url>
+          <line>153</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/logbert/bert_pytorch/train_log.py</url>
+          <line>126</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/data_process.py</url>
+          <line>49</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/dataset/window.py</url>
+          <line>46</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/dataset/train_test_split.py</url>
+          <line>70</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/data_process.py</url>
+          <line>54</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/logdeep/tools/train.py</url>
+          <line>281</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/logdeep/tools/train.py</url>
+          <line>68</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/logdeep/tools/train.py</url>
+          <line>232</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/logbert$main.coverage" NAME="main_run Coverage Results" MODIFIED="1606797635411" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/logbert" />
+    <SUITE FILE_PATH="coverage/logbert$downloads.coverage" NAME="downloads Coverage Results" MODIFIED="1606952529053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/logbert/dataset" />
+    <SUITE FILE_PATH="coverage/logbert$data_process.coverage" NAME="data_process Coverage Results" MODIFIED="1625202725495" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/logbert$bert.coverage" NAME="bert Coverage Results" MODIFIED="1607034827654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/logbert" />
+    <SUITE FILE_PATH="coverage/logbert$main_logdeep.coverage" NAME="main_logdeep Coverage Results" MODIFIED="1625348819451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/logbert$main_run.coverage" NAME="main_run Coverage Results" MODIFIED="1607133714778" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/logbert" />
+    <SUITE FILE_PATH="coverage/logbert$main_logbert.coverage" NAME="main_logbert Coverage Results" MODIFIED="1625183514015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/logbert" />
+  </component>
+</project>
