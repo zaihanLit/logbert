@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82ea7d7e-ac3d-4005-aa35-e4363f122844" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/logbert.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/logbert.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/_data_process.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/logbert" beforeDir="false" afterPath="$PROJECT_DIR$/logbert" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbert/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/logbert/.vs/PythonSettings.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/logbert/.vs/VSWorkspaceState.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/logbert/.vs/deeplog/v16/.suo" beforeDir="false" />
@@ -96,8 +89,6 @@
       <change beforePath="$PROJECT_DIR$/logbert/logparser/Spell.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/logbert/logparser/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logbert/test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logdeep/dataset/log.py" beforeDir="false" afterPath="$PROJECT_DIR$/logdeep/dataset/log.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/run_logbert_bgl.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/run_logbert_bgl.sh" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -113,7 +104,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/logbert" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1l1Jtti4YblYlMUfTzRxzD0RWkL" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -300,7 +291,7 @@
       <workItem from="1624911179184" duration="14653000" />
       <workItem from="1624932341762" duration="33888000" />
       <workItem from="1625519197594" duration="3607000" />
-      <workItem from="1625525571899" duration="2427000" />
+      <workItem from="1625525571899" duration="3345000" />
     </task>
     <servers />
   </component>
