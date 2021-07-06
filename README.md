@@ -10,11 +10,11 @@ creating log sequences and finally modeling.
 - Linux or macOS
 - Python 3
 - NVIDIA GPU + CUDA cuDNN
-- PyTorch 1.6
+- PyTorch
   
 
 ## Installation
-This code is written in Python 3.8 and requires the packages listed in requirements.txt.
+This code is written in Python 3 and requires the packages listed in requirements.txt.
 An virtual environment is recommended to run this code
 
 On macOS and Linux:  
@@ -23,7 +23,9 @@ python3 -m pip install --user virtualenv
 python3 -m venv env
 source env/bin/activate
 pip install -r requirements.txt
+deactivate
 ```
+Reference: https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/
 
 ## Experiment
 We currently have implemented our model Logbert and other baseline models on [HDFS](https://github.com/logpai/loghub/tree/master/HDFS), [BGL](https://github.com/logpai/loghub/tree/master/BGL), and [thunderbird]() datasets
@@ -55,6 +57,25 @@ sh run_loglizer_hdfs.sh
 ```
 
 
-## Docker Installment
+## Docker Implementation
+
+### 1. Use image published on docker hub
+```shell script
+
+```
+
+### 2. Create your own docker image
+1. Edit Dockerfile
+```shell script
+
+```
+2. Build docker image
+
+
+
+
+
+
+
 
 

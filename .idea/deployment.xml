@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="On explicit save action" serverName="haixuanguo@129.123.25.207:22" autoUploadExternalChanges="true">
+  <component name="PublishConfigData" autoUpload="Always" serverName="haixuanguo@129.123.25.207:22" autoUploadExternalChanges="true">
     <serverData>
       <paths name="haixuanguo@129.123.25.207:22">
         <serverdata>
           <mappings>
-            <mapping deploy="/home/haixuanguo/Documents/logbert" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/home/haixuanguo/Documents/logbert_code" local="$PROJECT_DIR$" />
           </mappings>
         </serverdata>
       </paths>
     </serverData>
-    <option name="myAutoUpload" value="ON_EXPLICIT_SAVE" />
+    <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>
