@@ -70,7 +70,8 @@ sh run_loglizer_hdfs.sh
 
 3. Refer [this](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/user-guide.html#id2) to set up parameters for docker with NVIDIA GPU
 
-### 1. Use image published on docker hub
+<b>You can choose either of the two  docker methods below</b>
+### Use image published on docker hub
 ```shell script
 docker pull haixuanguo/logbert:1.0
 
@@ -78,7 +79,7 @@ docker run --gpus all -it haixuanguo/logbert:1.0
 
 ```
 
-### 2. Create your own docker image
+### Create your own docker image
 ```shell script
 docker build -t logbert:1.1 .
 
