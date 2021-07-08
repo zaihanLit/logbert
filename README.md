@@ -6,15 +6,19 @@ This repository provides the implementation of Logbert for log anomaly detection
 The process includes downloading raw data online, parsing logs into structured data, 
 creating log sequences and finally modeling. 
 
-## Prerequisites
-- Linux or macOS
-- Python 3
-- NVIDIA GPU + CUDA cuDNN
-- PyTorch
+![alt](img/log_preprocess.png)
+
+## Configuration
+- Ubuntu 20.04
+- NVIDIA driver 460.73.01 
+- CUDA 11.2
+- Python 3.8
+- PyTorch 1.9.0
+
   
 
 ## Installation
-This code is written in Python 3 and requires the packages listed in requirements.txt.
+This code requires the packages listed in requirements.txt.
 An virtual environment is recommended to run this code
 
 On macOS and Linux:  
@@ -28,7 +32,7 @@ deactivate
 Reference: https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/
 
 ## Experiment
-We currently have implemented our model Logbert and other baseline models on [HDFS](https://github.com/logpai/loghub/tree/master/HDFS), [BGL](https://github.com/logpai/loghub/tree/master/BGL), and [thunderbird]() datasets
+Logbert and other baseline models are implemented on [HDFS](https://github.com/logpai/loghub/tree/master/HDFS), [BGL](https://github.com/logpai/loghub/tree/master/BGL), and [thunderbird]() datasets
 
  ### HDFS example
  ```shell script
@@ -58,19 +62,29 @@ sh run_loglizer_hdfs.sh
 
 
 ## Docker Implementation
+### How to use docker with NVIDIA GPU
+
+1. Type ```nvidia-smi```  and check NVIDIA driver and  CUDA version
+
+2. Set up NVIDIA Container Toolkit following this [tutorial](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html)
+
+3. Refer [this](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/user-guide.html#id2) to set up parameters for docker with NVIDIA GPU
 
 ### 1. Use image published on docker hub
 ```shell script
+docker pull haixuanguo/logbert:1.0
+
+docker run --gpus all -it haixuanguo/logbert:1.0
 
 ```
 
 ### 2. Create your own docker image
-1. Edit Dockerfile
 ```shell script
+docker build -t logbert:1.1 .
+
+docker run --gpus all -it haixuanguo/logbert:1.1
 
 ```
-2. Build docker image
-
 
 
 

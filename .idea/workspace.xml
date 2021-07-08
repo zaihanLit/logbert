@@ -2,93 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82ea7d7e-ac3d-4005-aa35-e4363f122844" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert" beforeDir="false" afterPath="$PROJECT_DIR$/logbert" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/.vs/PythonSettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/.vs/VSWorkspaceState.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/.vs/deeplog/v16/.suo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/.vs/slnx.sqlite" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/BGL/dataAnalysis-logs.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/BGL/dataAnalysis.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/BGL/data_process.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/BGL/deeplog.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/BGL/loganomaly.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/BGL/logbert.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/BGL/logbert.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/BGL/logkey_time.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/BGL/logtransformer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/BGL/result_analysis.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/HDFS/data_process.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/HDFS/data_process0.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/HDFS/hdfs_data_process.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/HDFS/hdfs_deeplog.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/HDFS/hdfs_parser.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/OpenStack/const.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/OpenStack/data_process.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/OpenStack/data_process2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/OpenStack/data_view.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/OpenStack/openstack_deeplog.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/OpenStack/openstack_parser.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/Spirit/data_process.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/TBird/data_analysis.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/TBird/data_process.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/__main__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/build_vocab.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/dataset/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/dataset/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/dataset/dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/dataset/dataset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/dataset/log_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/dataset/log_dataset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/dataset/sample.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/dataset/sample.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/dataset/utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/dataset/vocab.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/dataset/vocab.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/attention/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/attention/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/attention/multi_head.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/attention/multi_head.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/attention/single.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/attention/single.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/bert.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/bert.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/embedding/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/embedding/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/embedding/bert.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/embedding/bert.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/embedding/position.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/embedding/position.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/embedding/segment.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/embedding/segment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/embedding/time_embed.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/embedding/time_embed.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/embedding/token.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/embedding/token.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/language_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/language_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/log_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/log_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/transformer.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/transformer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/utils/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/utils/feed_forward.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/utils/feed_forward.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/utils/gelu.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/utils/gelu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/utils/layer_norm.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/utils/layer_norm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/model/utils/sublayer.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/model/utils/sublayer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/predict.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/predict_log.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/predict_log.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/train.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/train_log.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/train_log.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/trainer/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/trainer/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/trainer/optim_schedule.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/trainer/optim_schedule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/bert_pytorch/trainer/pretrain.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/bert_pytorch/trainer/pretrain.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/demo/HDFS_demo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/demo/Spell_demo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/demo/deeplog_demo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/demo/openstack.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/demo/openstack_demo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/logdeep/dataset/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/logdeep/dataset/corpus.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/logdeep/dataset/feature_extraction.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/logdeep/dataset/log.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/logdeep/dataset/sample.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/logdeep/dataset/session.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/logdeep/dataset/vocab.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/logdeep/models/lstm.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/logdeep/models/transformer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/logdeep/tools/predict.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/logdeep/tools/train.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/logdeep/tools/utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/logparser/Drain.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/logparser/Spell.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/logparser/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/logbert/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logbert/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -115,7 +32,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/img" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyDebuggerOptionsProvider">
@@ -291,7 +208,7 @@
       <workItem from="1624911179184" duration="14653000" />
       <workItem from="1624932341762" duration="33888000" />
       <workItem from="1625519197594" duration="3607000" />
-      <workItem from="1625525571899" duration="3345000" />
+      <workItem from="1625525571899" duration="8340000" />
     </task>
     <servers />
   </component>
