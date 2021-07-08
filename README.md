@@ -64,13 +64,13 @@ sh run_loglizer_hdfs.sh
 ## Docker Implementation
 ### How to use docker with NVIDIA GPU
 
-1. Type ```nvidia-smi```  and check NVIDIA driver and  CUDA version
+1. Type ```nvidia-smi```  and check NVIDIA driver and  CUDA version. According to [this](https://docs.nvidia.com/deploy/cuda-compatibility/index.html), CUDA 11.2 requires NVIDIA driver version >= 450.80.02
 
 2. Set up NVIDIA Container Toolkit following this [tutorial](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html)
 
 3. Refer [this](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/user-guide.html#id2) to set up parameters for docker with NVIDIA GPU
 
-<b>You can choose either of the two  docker methods below</b>
+<b>You can choose either of the two docker methods below</b>
 ### Use image published on docker hub
 ```shell script
 docker pull haixuanguo/logbert:1.0
@@ -91,6 +91,18 @@ docker run --gpus all -it haixuanguo/logbert:1.1
 
 
 
+## Citation
 
+If you find this useful for your research, please cite the following paper.
+```
+@InProceedings{guo_logbert_2021_ijcnn,
+author = {Haixuan Guo, Shuhan Yuan and Xintao Wu},
+title = {LogBERT: Log Anomaly Detection via BERT},
+booktitle = {Proceedings of the International Conference on Neural Networks (IJCNN)},
+month = {July 18-22},
+year = {2021}
+}
+
+```
 
 
