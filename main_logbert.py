@@ -14,7 +14,7 @@ def arg_parser():
     parser = ArgumentParser()
     parser.add_argument("--model_name", help="which model to train", default="logbert")
     parser.add_argument("--dataset_name", help="which dataset to use")
-    parser.add_argument("--device", help="hardware device", default="cuda")
+    parser.add_argument("--device", help="hardware device", default="cpu")
     parser.add_argument("--output_dir", metavar="DIR", help="output directory")
     parser.add_argument("--model_dir", metavar="DIR", help="model directory")
 
