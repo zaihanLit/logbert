@@ -94,7 +94,7 @@ def main():
         print("\n")
         vocab.save_vocab(options["vocab_path"])
 
-    #Trainer(options).train()
+    Trainer(options).train()
     Predictor(options).predict()
 
 
