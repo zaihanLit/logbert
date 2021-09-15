@@ -49,6 +49,8 @@ def fixed_window(line, window_size, adaptive_window, seq_len=None, min_len=0):
 
     logkey_seqs = []
     time_seq = []
+    print("length of line" + str(len(line)))
+    print("window_size:"+str(window_size))
     for i in range(0, len(line), window_size):
         logkey_seqs.append(line[i:i + window_size])
         time_seq.append(tim[i:i + window_size])

@@ -2,7 +2,7 @@
 
 # hyperparameters
 OUTPUT_DIR="~/.output/"
-DATASET_NAME='bgl_2k'
+DATASET_NAME='bgl'
 MODEL_NAME='logbert'
 
 MIN_LEN=10

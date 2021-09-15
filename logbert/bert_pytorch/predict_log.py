@@ -121,6 +121,9 @@ class Predictor():
                 log_seq, tim_seq = fixed_window(line, window_size,
                                                 adaptive_window=adaptive_window,
                                                 seq_len=seq_len, min_len=min_len)
+                print(line)
+                print(log_seq)
+                print(tim_seq)
                 if len(log_seq) == 0:
                     continue
 
@@ -136,6 +139,7 @@ class Predictor():
 
         # sort seq_pairs by seq len
         log_seqs = np.array(log_seqs)
+        print(log_seqs)
         tim_seqs = np.array(tim_seqs)
 
         test_len = list(map(len, log_seqs))
