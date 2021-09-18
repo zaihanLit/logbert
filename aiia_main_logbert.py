@@ -1,4 +1,5 @@
 import os
+import pandas as pd
 from argparse import ArgumentParser
 
 from logbert.bert_pytorch import Predictor, Trainer
@@ -62,6 +63,8 @@ options["vocab_path"] = options["output_dir"] + "vocab.pkl"  # pickle file
 options["model_path"] = options["model_dir"] + "best_model.pth"
 options["scale_path"] = options["model_dir"] + "scale.pkl"
 
+options["testset_files"] = ["evalue-"+str(i)+".txt.test" for i in range(0,10)]
+
 if not os.path.exists(options["model_dir"]):
     os.makedirs(options["model_dir"], exist_ok=True)
 
@@ -79,7 +82,23 @@ if not os.path.exists(options["vocab_path"]):
     print("\n")
     vocab.save_vocab(options["vocab_path"])
 
-#Trainer(options).train()
-Predictor(options).predict()
+Trainer(options).train()
+#Predictor(options).predict_aiia()
+
+'''
+result_df = pd.DataFrame(columns=['Result','StartLineNum','Detail','TimeCost'])
+
+for i, testset_file in enumerate(options["testset_files"]):
+    print("Now predicting "+testset_file+".")
+    evaluefile_path = "evalue/" + testset_file
+
+    predict_result, elapsed_time = Predictor(options).predict_testset_aiia(evaluefile_path,seq_threshold=0.1)
+    new_row = {"Result":predict_result,"StartLineNum":2,"Detail":1,"TimeCost":elapsed_time}
+    result_df = result_df.append(new_row,ignore_index=True)
+
+result_df.to_csv(options["output_dir"]+"result.csv")
+'''
+
+
 
 
