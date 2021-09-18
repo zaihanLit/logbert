@@ -96,7 +96,6 @@ def split_train_test(data_dir, output_dir, log_file, dataset_name, window_type, 
     df_abnormal = window_df[window_df["Label"] == 1]
     Utils.file_generator(os.path.join(output_dir, 'test_abnormal'), df_abnormal, ["EventId"])
     print('test abnormal size {}'.format(len(df_abnormal)))
-<<<<<<< HEAD
 
 def split_train_test_aiia(data_dir, output_dir, log_file, dataset_name, window_type, window_size, step_size, train_size):
 
@@ -161,5 +160,3 @@ def generate_test_set_aiia(output_dir, log_file, window_type, window_size, step_
     print("test set size {}".format(test_set))
 
 
-=======
->>>>>>> 3432d4403b1caf05c83f3f9eefa83bb5e41aafef
