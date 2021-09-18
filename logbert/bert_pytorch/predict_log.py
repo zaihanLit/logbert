@@ -304,3 +304,102 @@ class Predictor():
         elapsed_time = time.time() - start_time
         print('elapsed_time: {}'.format(elapsed_time))
 
+
+    def predict_aiia(self):
+        model = torch.load(self.model_path)
+        model.to(self.device)
+        model.eval()
+        print('model_path: {}'.format(self.model_path))
+
+        start_time = time.time()
+        vocab = WordVocab.load_vocab(self.vocab_path)
+
+        scale = None
+        error_dict = None
+
+        if self.deepsvdd_loss:
+            center_dict = torch.load(self.model_dir + "best_center.pt")
+            self.center = center_dict["center"]
+            self.radius = center_dict["radius"]
+            # self.center = self.center.view(1,-1)
+
+
+        print("test normal predicting")
+        test_normal_results, test_normal_errors = self.helper(model, self.output_dir, "test_normal", vocab, scale, error_dict)
+
+        #print("test abnormal predicting")
+        #test_abnormal_results, test_abnormal_errors = self.helper(model, self.output_dir, "test_abnormal", vocab, scale, error_dict)
+
+        print("Saving test normal results")
+        with open(self.model_dir + "test_normal_results", "wb") as f:
+            pickle.dump(test_normal_results, f)
+
+        #print("Saving test abnormal results")
+        #with open(self.model_dir + "test_abnormal_results", "wb") as f:
+        #    pickle.dump(test_abnormal_results, f)
+
+        print("Saving test normal errors")
+        with open(self.model_dir + "test_normal_errors.pkl", "wb") as f:
+            pickle.dump(test_normal_errors, f)
+
+        #print("Saving test abnormal results")
+        #with open(self.model_dir + "test_abnormal_errors.pkl", "wb") as f:
+        #    pickle.dump(test_abnormal_errors, f)
+
+        params = {"is_logkey": self.is_logkey, "is_time": self.is_time, "deepsvdd_loss": self.deepsvdd_loss,
+                  "deepsvdd_loss_test": self.deepsvdd_loss_test}
+        
+        for seq_th in np.arange(0,1,0.1):
+            FP = compute_anomaly(test_normal_results, params, seq_th)
+            #TP = compute_anomaly(test_abnormal_results, params, seq_th)
+
+            #if TP == 0:
+            #    continue
+
+            #TN = len(test_normal_results) - FP
+            #FN = len(test_abnormal_results) - TP
+            #P = 100 * TP / (TP + FP)
+            #R = 100 * TP / (TP + FN)
+            #F1 = 2 * P * R / (P + R)
+
+            print("ratio: "+str(seq_th)+" false ratio: "+str(FP/len(test_normal_results)))
+
+        elapsed_time = time.time() - start_time
+        print('elapsed_time: {}'.format(elapsed_time))
+
+    
+    def predict_testset_aiia(self, testset_file, seq_threshold):
+        model = torch.load(self.model_path)
+        model.to(self.device)
+        model.eval()
+        print('model_path: {}'.format(self.model_path))
+
+        start_time = time.time()
+        vocab = WordVocab.load_vocab(self.vocab_path)
+
+        retResult = 'Normal'
+
+        scale = None
+        error_dict = None
+
+        if self.deepsvdd_loss:
+            center_dict = torch.load(self.model_dir + "best_center.pt")
+            self.center = center_dict["center"]
+            self.radius = center_dict["radius"]
+            # self.center = self.center.view(1,-1)
+
+
+        print("test normal predicting")
+        test_normal_results, test_normal_errors = self.helper(model, self.output_dir, testset_file, vocab, scale, error_dict)
+
+        for seq_res in test_normal_results:
+            # label pairs as anomaly when over half of masked tokens are undetected
+            if (self.is_logkey and seq_res["undetected_tokens"] > seq_res["masked_tokens"] * seq_threshold) or \
+                    (self.deepsvdd_loss_test and seq_res["deepSVDD_label"]):
+                retResult = 'Anomaly'
+        
+        elapsed_time = time.time() - start_time
+        print('elapsed_time: {}'.format(elapsed_time))
+
+        return retResult, elapsed_time
+

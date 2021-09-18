@@ -12,8 +12,11 @@ class WindowFactory:
             return SessionWindow()
         elif window_type == "sliding":
             return SlidingWindow()
+<<<<<<< HEAD
         elif window_type == "sliding_aiia":
             return SlidingWindow_aiia()
+=======
+>>>>>>> 3432d4403b1caf05c83f3f9eefa83bb5e41aafef
         else:
             raise NotImplementedError
 
@@ -123,6 +126,7 @@ class SlidingWindow(Window):
 
         return pd.DataFrame(new_data, columns=df.columns)
 
+<<<<<<< HEAD
 class SlidingWindow_aiia(Window):
     def generate_sequence(self, df, **param):
         return self.sliding_window(df, **param)
@@ -167,6 +171,8 @@ class SlidingWindow_aiia(Window):
 
         return pd.DataFrame(new_data, columns=[['eventids']])
 
+=======
+>>>>>>> 3432d4403b1caf05c83f3f9eefa83bb5e41aafef
 
 class FixedWindow(Window):
     def generate_sequence(self, df, **param):

@@ -96,6 +96,7 @@ def split_train_test(data_dir, output_dir, log_file, dataset_name, window_type, 
     df_abnormal = window_df[window_df["Label"] == 1]
     Utils.file_generator(os.path.join(output_dir, 'test_abnormal'), df_abnormal, ["EventId"])
     print('test abnormal size {}'.format(len(df_abnormal)))
+<<<<<<< HEAD
 
 def split_train_test_aiia(data_dir, output_dir, log_file, dataset_name, window_type, window_size, step_size, train_size):
 
@@ -134,3 +135,31 @@ def split_train_test_aiia(data_dir, output_dir, log_file, dataset_name, window_t
     Utils.file_generator(os.path.join(output_dir, 'test_normal'), test_normal, ["eventids"])
     print("test normal size {}".format(normal_len - train_len))
 
+def generate_test_set_aiia(output_dir, log_file, window_type, window_size, step_size):
+
+
+    ##################
+    # Transformation #
+    ##################
+    print("\nLoading", f'{output_dir}{log_file}_structured.csv')
+    df = pd.read_csv(f'{output_dir}{log_file}_structured.csv')
+
+    window = WindowFactory().create_window(window_type)
+
+    window_df = window.generate_sequence(df[["LineId", "EventId"]], window_size=window_size, step_size=step_size)
+
+    if not os.path.exists(output_dir):
+        print(f"creating {output_dir}")
+        os.mkdir(output_dir)
+
+    ############
+    # Test Set #
+    ############
+    test_set = window_df
+
+    Utils.file_generator(os.path.join(output_dir, log_file+'.test'), test_set, ["eventids"])
+    print("test set size {}".format(test_set))
+
+
+=======
+>>>>>>> 3432d4403b1caf05c83f3f9eefa83bb5e41aafef

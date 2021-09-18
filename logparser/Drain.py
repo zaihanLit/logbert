@@ -4,6 +4,16 @@ Author      : LogPAI team
 License     : MIT
 """
 
+<<<<<<< HEAD
+"""
+对Drain的改动(by zaihan)：
+1、rootNode作为了parser的一个变量，这样可以保存normal.log解析后生成的Tree，用于后续测试文件的解析；
+2、对于parse函数，对于每次解析的新文件，均会重置logIDL，使得outputResult能够正确打印行数；
+3、Logcluster类，增加一个类变量template_id，这样cluster的template_id在cluster创建后就一直不会变了；
+"""
+
+=======
+>>>>>>> 3432d4403b1caf05c83f3f9eefa83bb5e41aafef
 import re
 import os
 import numpy as np
@@ -18,6 +28,11 @@ class Logcluster:
         if logIDL is None:
             logIDL = []
         self.logIDL = logIDL
+<<<<<<< HEAD
+        template_str = ' '.join(self.logTemplate)
+        self.template_id = hashlib.md5(template_str.encode('utf-8')).hexdigest()[0:8]
+=======
+>>>>>>> 3432d4403b1caf05c83f3f9eefa83bb5e41aafef
 
 
 class Node:
@@ -53,6 +68,10 @@ class LogParser:
         self.log_format = log_format
         self.rex = rex
         self.keep_para = keep_para
+<<<<<<< HEAD
+        self.rootNode = Node()
+=======
+>>>>>>> 3432d4403b1caf05c83f3f9eefa83bb5e41aafef
 
     def hasNumbers(self, s):
         return any(char.isdigit() for char in s)
@@ -200,7 +219,12 @@ class LogParser:
         for logClust in logClustL:
             template_str = ' '.join(logClust.logTemplate)
             occurrence = len(logClust.logIDL)
+<<<<<<< HEAD
+            #template_id = hashlib.md5(template_str.encode('utf-8')).hexdigest()[0:8]
+            template_id = logClust.template_id
+=======
             template_id = hashlib.md5(template_str.encode('utf-8')).hexdigest()[0:8]
+>>>>>>> 3432d4403b1caf05c83f3f9eefa83bb5e41aafef
             for logID in logClust.logIDL:
                 logID -= 1
                 log_templates[logID] = template_str
@@ -246,7 +270,11 @@ class LogParser:
         print('Parsing file: ' + os.path.join(self.path, logName))
         start_time = datetime.now()
         self.logName = logName
+<<<<<<< HEAD
+        #rootNode = Node()
+=======
         rootNode = Node()
+>>>>>>> 3432d4403b1caf05c83f3f9eefa83bb5e41aafef
         logCluL = []
 
         self.load_data()
@@ -257,18 +285,37 @@ class LogParser:
             logID = line['LineId']
             logmessageL = self.preprocess(line['Content']).strip().split()
             # logmessageL = filter(lambda x: x != '', re.split('[\s=:,]', self.preprocess(line['Content'])))
+<<<<<<< HEAD
+            matchCluster = self.treeSearch(self.rootNode, logmessageL)
+=======
             matchCluster = self.treeSearch(rootNode, logmessageL)
+>>>>>>> 3432d4403b1caf05c83f3f9eefa83bb5e41aafef
 
             # Match no existing log cluster
             if matchCluster is None:
                 newCluster = Logcluster(logTemplate=logmessageL, logIDL=[logID])
                 logCluL.append(newCluster)
+<<<<<<< HEAD
+                self.addSeqToPrefixTree(self.rootNode, newCluster)
+
+            # Add the new log message to the existing cluster
+            else:
+                if matchCluster in logCluL:
+                    matchCluster.logIDL.append(logID)
+                else:
+                    matchCluster.logIDL = [logID]
+                    logCluL.append(matchCluster)
+
+                newTemplate = self.getTemplate(logmessageL, matchCluster.logTemplate)
+                #matchCluster.logIDL.append(logID)
+=======
                 self.addSeqToPrefixTree(rootNode, newCluster)
 
             # Add the new log message to the existing cluster
             else:
                 newTemplate = self.getTemplate(logmessageL, matchCluster.logTemplate)
                 matchCluster.logIDL.append(logID)
+>>>>>>> 3432d4403b1caf05c83f3f9eefa83bb5e41aafef
                 if ' '.join(newTemplate) != ' '.join(matchCluster.logTemplate):
                     matchCluster.logTemplate = newTemplate
 

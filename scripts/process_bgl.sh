@@ -1,8 +1,13 @@
 #!/bin/bash
 
 OUTPUT_DIR="~/.output/"
+<<<<<<< HEAD
 DATASET_NAME='bgl' #bgl_2k, bgl
 LOG_FILE='BGL.log' #BGL_2k.log, BGL.log
+=======
+DATASET_NAME='bgl_2k' #bgl_2k, bgl
+LOG_FILE='BGL_2k.log' #BGL_2k.log, BGL.log
+>>>>>>> 3432d4403b1caf05c83f3f9eefa83bb5e41aafef
 PARSER_TYPE='drain'
 LOG_FORMAT='Label,Id,Date,Code1,Time,Code2,Component1,Component2,Level,Content'
 REGEX1='(0x)[0-9a-fA-F]+'
