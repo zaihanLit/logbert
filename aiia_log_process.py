@@ -42,7 +42,7 @@ options["step_size"] = 5
 options["train_size"] = 0.7
 
 # evalue logs
-options["evalue_files"] = ["evalue-"+str(i)+".txt" for i in range(0,20)]
+options["evalue_files"] = ["evalue-"+str(i)+".txt" for i in range(1123,1124)]
 
 # parser path
 options["parserPickle_path"] = "/root/.output/aiia/parser.pkl"
@@ -73,7 +73,7 @@ if options["parser_type"] is not None:
         pickle.dump(parser, f)
 ''' 
 
-
+'''
 # split normal to train and valid set
 
 split_train_test_aiia(data_dir=options["data_dir"],
@@ -84,9 +84,9 @@ split_train_test_aiia(data_dir=options["data_dir"],
                     window_size=options["window_size"],
                     step_size=options["step_size"],
                     train_size=options["train_size"])
-
-
 '''
+
+
 # parse evalue logs
 with open(options["parserPickle_path"], "rb") as f:
     parser = pickle.load(f)
@@ -97,9 +97,9 @@ for evalue_file in options["evalue_files"]:
 
     options["log_format"] = " ".join([f"<{field}>" for field in options["log_format"].split(",")])
     parser.parse(evaluefile_path)
+
+
 '''
-
-
 # generate test set for each evalue files
 
 for evalue_file in options["evalue_files"]:
@@ -111,5 +111,5 @@ for evalue_file in options["evalue_files"]:
                         window_type=options["window_type"],
                         window_size=options["window_size"],
                         step_size=options["step_size"])
-
+'''
 

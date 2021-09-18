@@ -226,11 +226,11 @@ class LogParser:
             self.df_log["ParameterList"] = self.df_log.apply(self.get_parameter_list, axis=1)
         self.df_log.to_csv(os.path.join(self.savePath, self.logName + '_structured.csv'), index=False)
 
-        occ_dict = dict(self.df_log['EventTemplate'].value_counts())
-        df_event = pd.DataFrame()
-        df_event['EventTemplate'] = self.df_log['EventTemplate'].unique()
-        df_event['EventId'] = df_event['EventTemplate'].map(lambda x: hashlib.md5(str(x).encode('utf-8')).hexdigest()[0:8])
-        df_event['Occurrences'] = df_event['EventTemplate'].map(occ_dict)
+        #occ_dict = dict(self.df_log['EventTemplate'].value_counts())
+        #df_event = pd.DataFrame()
+        #df_event['EventTemplate'] = self.df_log['EventTemplate'].unique()
+        #df_event['EventId'] = df_event['EventTemplate'].map(lambda x: hashlib.md5(str(x).encode('utf-8')).hexdigest()[0:8])
+        #df_event['Occurrences'] = df_event['EventTemplate'].map(occ_dict)
         df_event.to_csv(os.path.join(self.savePath, self.logName + '_templates.csv'), index=False,
                         columns=["EventId", "EventTemplate", "Occurrences"])
 
