@@ -12,6 +12,8 @@ class WindowFactory:
             return SessionWindow()
         elif window_type == "sliding":
             return SlidingWindow()
+        elif window_type == "sliding_aiia":
+            return SlidingWindow_aiia()
         else:
             raise NotImplementedError
 
@@ -120,6 +122,50 @@ class SlidingWindow(Window):
         print('\nThere are %d instances (sliding windows) in this dataset' % len(start_end_index_pair))
 
         return pd.DataFrame(new_data, columns=df.columns)
+
+class SlidingWindow_aiia(Window):
+    def generate_sequence(self, df, **param):
+        return self.sliding_window(df, **param)
+
+    def sliding_window(self, df, window_size, step_size):
+        """
+        :param df: dataframe columns=[timestamp, label, eventid, time duration]
+        :param window_size: seconds,
+        :param step_size: seconds
+        :return: dataframe columns=[eventids, time durations, label]
+        """
+        log_size = df.shape[0]
+        logkey_data = df.iloc[:, 1]
+        new_data = []
+        start_end_index_pair = set()
+
+        start_index = 0
+        end_index = start_index + window_size
+
+        start_end_index_pair.add(tuple([start_index, end_index]))
+
+        # move the start and end index until next sliding window
+        num_session = 1
+        while end_index < log_size:
+            start_index = start_index + step_size
+            end_index = start_index + window_size
+
+            # when start_index == end_index, there is no value in the window
+            if start_index != end_index:
+                start_end_index_pair.add(tuple([start_index, end_index]))
+
+            num_session += 1
+            if num_session % 1000 == 0:
+                print("process {} time window".format(num_session), end='\r')
+
+        for (start_index, end_index) in start_end_index_pair:
+
+            new_data.append([logkey_data[start_index: end_index].values])
+
+        assert len(start_end_index_pair) == len(new_data)
+        print('\nThere are %d instances (sliding windows) in this dataset' % len(start_end_index_pair))
+
+        return pd.DataFrame(new_data, columns=[['eventids']])
 
 
 class FixedWindow(Window):
