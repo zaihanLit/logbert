@@ -379,7 +379,7 @@ class Predictor():
 
         retResult = 'Normal'
         firstlineNum = 0
-        outputList = [0,0,0,0,0,0,0,0,0,0]
+        outputList = [0,0,0,0,0,0,0,0,0]
         cnt = 0
 
         scale = None
@@ -401,9 +401,9 @@ class Predictor():
                     (self.deepsvdd_loss_test and seq_res["deepSVDD_label"]):
                 retResult = 'Anomaly'
                 firstlineNum = 10 + cnt
-                outputList.append[1]
+                outputList.append(1)
             else:
-                outputList.append[0]
+                outputList.append(0)
 
             cnt += 1
         
