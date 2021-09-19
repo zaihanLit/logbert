@@ -402,7 +402,8 @@ class Predictor():
                 retResult = 'Anomaly'
                 firstlineNum = 10 + cnt
                 outputList.append[1]
-            outputList.append[0]
+            else:
+                outputList.append[0]
 
             cnt += 1
         
