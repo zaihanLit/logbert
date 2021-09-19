@@ -378,6 +378,9 @@ class Predictor():
         vocab = WordVocab.load_vocab(self.vocab_path)
 
         retResult = 'Normal'
+        firstlineNum = 0
+        outputList = [0,0,0,0,0,0,0,0,0,0]
+        cnt = 0
 
         scale = None
         error_dict = None
@@ -397,9 +400,14 @@ class Predictor():
             if (self.is_logkey and seq_res["undetected_tokens"] > seq_res["masked_tokens"] * seq_threshold) or \
                     (self.deepsvdd_loss_test and seq_res["deepSVDD_label"]):
                 retResult = 'Anomaly'
+                firstlineNum = 10 + cnt
+                outputList.append[1]
+            outputList.append[0]
+
+            cnt += 1
         
         elapsed_time = time.time() - start_time
         print('elapsed_time: {}'.format(elapsed_time))
 
-        return retResult, elapsed_time
+        return retResult,firstlineNum, outputList, elapsed_time
 
