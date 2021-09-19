@@ -306,7 +306,7 @@ class LogParser:
 
     def preprocess(self, line):
         for currentRex in self.rex:
-            line = re.sub(currentRex, '<*>', line)
+            line = re.sub(currentRex[0], currentRex[1], line)
         return line
 
     def log_to_dataframe(self, log_file, regex, headers, logformat):

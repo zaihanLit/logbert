@@ -24,25 +24,31 @@ options["log_file"] = "normal.txt"
 options["parser_type"] = "drain"
 options["log_format"] = "Id,Content"
 
-REGEX1='(0x)[0-9a-fA-F]+'
-REGEX2='\d+.\d+.\d+.\d+'
-REGEX3='(/[-\w]+)+'
-REGEX4='\d+'
-options["regex"] = [REGEX1,REGEX2,REGEX3,REGEX4]
+REGEX1= ['(0x)[0-9a-fA-F]+','<MemAddr>'] # 0xa829ce83
+REGEX2= ['\d+\.\d+\.\d+\.\d+','<IPAddr>'] # 10.10.10.10
+REGEX3= ['\s(/[-_\w\.]+)+\:\d+',' <LogOccurAddr>'] # /sdlj.dksd/cljs/a/ew.py:383
+REGEX4= ['\shttp://([\w\.\:\d]+)(/[-_\w\.]+)+(\?[\w=&-_]+)*',' <HTTPUri>'] # http://siels:1080/asdljw.json?aljsd=733&sldk=372
+REGEX5= ['\shttps://([\w\.\:\d]+)(/[-_\w\.]+)+(\?[\w=&-_]+)*',' <HTTPSUri>'] # https://siels:1080/asdljw.json?aljsd=733&sldk=372
+REGEX6= ['\s(/[-_\w\.]+)+(\?[\w=&-_]+)*',' <UriPath>'] # /v2.0/subnets.json?id=c197d80a-6716-46d7-b6a8-3fbf52d7bfc9
+REGEX7=['\s\[\d+\/[a-zA-Z]+/\d+\s\d+:\d+:\d+\]',' <DateTime>'] # [18/Jun/2021 14:16:02]
+REGEX8=['\s\(\d+\)',' <ProcessId>'] # (30102)
+
+
+options["regex"] = [REGEX1,REGEX2,REGEX3,REGEX4,REGEX5,REGEX6,REGEX7,REGEX8]
 options["keep_para"] = False
 
-options["st"] = 0.3
-options["depth"] = 3
+options["st"] = 0.6
+options["depth"] = 5
 options["max_child"] = 100
 options["tau"] = 0.5
 
 options["window_type"] = "sliding_aiia"
-options["window_size"] = 50
-options["step_size"] = 5
+options["window_size"] = 10
+options["step_size"] = 1
 options["train_size"] = 0.7
 
 # evalue logs
-options["evalue_files"] = ["evalue-"+str(i)+".txt" for i in range(1123,1124)]
+options["evalue_files"] = ["evalue-"+str(i)+".txt" for i in range(0,10)]
 
 # parser path
 options["parserPickle_path"] = "/root/.output/aiia/parser.pkl"
@@ -60,7 +66,7 @@ options["output_dir"] = os.path.join(options["output_dir"], options["dataset_nam
 if not os.path.exists(options["output_dir"]):
     os.makedirs(options["output_dir"], exist_ok=True)
 
-'''
+
 # parse normal logs
 if options["parser_type"] is not None:
     options["log_format"] = " ".join([f"<{field}>" for field in options["log_format"].split(",")])
@@ -71,7 +77,7 @@ if options["parser_type"] is not None:
 
     with open(options["parserPickle_path"], "wb") as f:
         pickle.dump(parser, f)
-''' 
+ 
 
 '''
 # split normal to train and valid set
