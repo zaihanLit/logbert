@@ -93,7 +93,7 @@ for i, testset_file in enumerate(options["testset_files"]):
     evaluefile_path = "evalue/" + testset_file
 
     retResult,firstlineNum, outputList, elapsed_time = Predictor(options).predict_testset_aiia(evaluefile_path,seq_threshold=0.1)
-    new_row = {"SequenceId":testset_file.strip(".txt"),"Result":predict_result,"StartLineNum":firstlineNum,"Detail":outputList,"TimeCost":str(elapsed_time/10)}
+    new_row = {"SequenceId":testset_file.strip(".txt"),"Result":retResult,"StartLineNum":firstlineNum,"Detail":outputList,"TimeCost":str(elapsed_time/10)}
     result_df = result_df.append(new_row,ignore_index=True)
 
 result_df.to_csv(options["output_dir"]+"result.csv")
