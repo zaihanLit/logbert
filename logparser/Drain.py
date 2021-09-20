@@ -27,6 +27,7 @@ class Logcluster:
         self.logIDL = logIDL
         template_str = ' '.join(self.logTemplate)
         self.template_id = hashlib.md5(template_str.encode('utf-8')).hexdigest()[0:8]
+        self.isNewCluster = True
 
 
 class Node:
@@ -197,6 +198,19 @@ class LogParser:
             if word == seq2[i]:
                 retVal.append(word)
             else:
+                if seq2[i] in ['<MemAddr>',
+                               '<IPAddr>',
+                               '<log_opt_value>',
+                               '<DateTime>',
+                               '<ProcessId>',
+                               '<HTTPUri>',
+                               '<HTTPSUri>',
+                               '<LogOccurAddr>',
+                               '<UriPath>',
+                               '<Path>',
+                               '<Path>',
+                               '<InstanceId>']:
+                    print("mask token be changed")
                 retVal.append('<*>')
 
             i += 1
@@ -216,9 +230,9 @@ class LogParser:
                 logID -= 1
                 log_templates[logID] = template_str
                 log_templateids[logID] = template_id
-            df_events.append([template_id, template_str, occurrence])
+            df_events.append([template_id, template_str, occurrence, logClust.isNewCluster])
 
-        df_event = pd.DataFrame(df_events, columns=['EventId', 'EventTemplate', 'Occurrences'])
+        df_event = pd.DataFrame(df_events, columns=['EventId', 'EventTemplate', 'Occurrences', 'isNewCluster'])
         self.df_log['EventId'] = log_templateids
         self.df_log['EventTemplate'] = log_templates
 
@@ -232,7 +246,7 @@ class LogParser:
         #df_event['EventId'] = df_event['EventTemplate'].map(lambda x: hashlib.md5(str(x).encode('utf-8')).hexdigest()[0:8])
         #df_event['Occurrences'] = df_event['EventTemplate'].map(occ_dict)
         df_event.to_csv(os.path.join(self.savePath, self.logName + '_templates.csv'), index=False,
-                        columns=["EventId", "EventTemplate", "Occurrences"])
+                        columns=["EventId", "EventTemplate", "Occurrences","isNewCluster"])
 
     def printTree(self, node, dep):
         pStr = ''
@@ -262,6 +276,8 @@ class LogParser:
 
         self.load_data()
 
+        df_newTemplates = pd.DataFrame(columns=['Content','template','TemplateID'])
+
         count = 0
         for idx, line in self.df_log.iterrows():
 
@@ -275,6 +291,8 @@ class LogParser:
                 newCluster = Logcluster(logTemplate=logmessageL, logIDL=[logID])
                 logCluL.append(newCluster)
                 self.addSeqToPrefixTree(self.rootNode, newCluster)
+                new_row = {"Content":line['Content'],"template":' '.join(newCluster.logTemplate), "TemplateID":newCluster.template_id}
+                df_newTemplates = df_newTemplates.append(new_row,ignore_index=True)
 
             # Add the new log message to the existing cluster
             else:
@@ -282,6 +300,7 @@ class LogParser:
                     matchCluster.logIDL.append(logID)
                 else:
                     matchCluster.logIDL = [logID]
+                    matchCluster.isNewCluster = False
                     logCluL.append(matchCluster)
 
                 newTemplate = self.getTemplate(logmessageL, matchCluster.logTemplate)
@@ -297,6 +316,8 @@ class LogParser:
             os.makedirs(self.savePath)
 
         self.outputResult(logCluL)
+
+        df_newTemplates.to_csv(os.path.join(self.savePath, logName+".new_templates"), index=False)
 
         print('Parsing done. [Time taken: {!s}]'.format(datetime.now() - start_time))
 

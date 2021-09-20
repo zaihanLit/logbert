@@ -379,7 +379,7 @@ class Predictor():
 
         retResult = 'Normal'
         firstlineNum = 0
-        outputList = [0,0,0,0,0,0,0,0,0]
+        outputList = [0 for i in range(0,24)]
         cnt = 0
 
         scale = None
@@ -400,7 +400,7 @@ class Predictor():
             if (self.is_logkey and seq_res["undetected_tokens"] > seq_res["masked_tokens"] * seq_threshold) or \
                     (self.deepsvdd_loss_test and seq_res["deepSVDD_label"]):
                 retResult = 'Anomaly'
-                firstlineNum = 10 + cnt
+                firstlineNum = 25 + cnt
                 outputList.append(1)
             else:
                 outputList.append(0)
