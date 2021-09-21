@@ -137,12 +137,12 @@ class SlidingWindow_aiia(Window):
         log_size = df.shape[0]
         logkey_data = df.iloc[:, 1]
         new_data = []
-        start_end_index_pair = set()
+        start_end_index_pair = []
 
         start_index = 0
         end_index = start_index + window_size
 
-        start_end_index_pair.add(tuple([start_index, end_index]))
+        start_end_index_pair.append(tuple([start_index, end_index]))
 
         # move the start and end index until next sliding window
         num_session = 1
@@ -152,7 +152,7 @@ class SlidingWindow_aiia(Window):
 
             # when start_index == end_index, there is no value in the window
             if start_index != end_index:
-                start_end_index_pair.add(tuple([start_index, end_index]))
+                start_end_index_pair.append(tuple([start_index, end_index]))
 
             num_session += 1
             if num_session % 1000 == 0:
