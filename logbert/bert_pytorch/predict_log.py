@@ -385,6 +385,9 @@ class Predictor():
         scale = None
         error_dict = None
 
+        total_undetected_tokens = 0
+        total_masked_tokens = 0
+
         if self.deepsvdd_loss:
             center_dict = torch.load(self.model_dir + "best_center.pt")
             self.center = center_dict["center"]
@@ -397,6 +400,8 @@ class Predictor():
 
         for seq_res in test_normal_results:
             # label pairs as anomaly when over half of masked tokens are undetected
+            total_undetected_tokens += seq_res["undetected_tokens"]
+            total_masked_tokens += seq_res["masked_tokens"]
             if (self.is_logkey and seq_res["undetected_tokens"] > seq_res["masked_tokens"] * seq_threshold) or \
                     (self.deepsvdd_loss_test and seq_res["deepSVDD_label"]):
                 retResult = 'Anomaly'
@@ -410,5 +415,5 @@ class Predictor():
         elapsed_time = time.time() - start_time
         print('elapsed_time: {}'.format(elapsed_time))
 
-        return retResult,firstlineNum, outputList, elapsed_time
+        return retResult,firstlineNum, outputList, elapsed_time, total_undetected_tokens, total_masked_tokens
 
