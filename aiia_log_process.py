@@ -87,7 +87,13 @@ REGEX153=['^RESP: \[3\d{2}\].*$','<RESP_3XX> <RESP_3XX> <RESP_3XX>'] # 简化所
 REGEX154=['^RESP: \[4\d{2}\].*$','<RESP_4XX> <RESP_4XX> <RESP_4XX>'] # 简化所有RESP的模版
 REGEX155=['^RESP: \[5\d{2}\].*$','<RESP_5XX> <RESP_5XX> <RESP_5XX>'] # 简化所有RESP的模版
 
-
+REGEX156=['(?!^Action.*)calling method: <.*>$','<ActionParas> _process_stack <LogOccurAddr>'] # 简化<Action Parameters>
+REGEX157=['(?!^Attempting to reserve resources.*)Deltas: \{.*\}', 'Deltas: <DeltaParas>'] # 简化<DeltaParas>
+REGEX158=['(?!^Quotas for project.*)resource sync: \{.*\}', 'resource sync: <QuotasParas>'] # 简化<QuotasParas>
+REGEX159=['(?!^Created reservations\s)\[.*\]', '<RerserveParas>'] # 简化<RerserveParas>
+REGEX160=['(?!^Preparing filters for devices set)\(.*\)', '<DevicesSet>'] # 简化<DevicesSet>
+REGEX161=['(?!^Update host state with service dict.*)\{.*\}', '<ServiceDict>'] # 简化<ServiceDict>
+REGEX162=['(?!^Generated XML.*)\(.*\)(?=.*to_xml)', '<XMLParas>'] # 简化<XMLParas>
 
 # 对一些常见的参数进行匹配
 REGEX201= ['(0x)[0-9a-fA-F]+','<MemAddr>'] # 0xa829ce83
@@ -110,7 +116,8 @@ options["regex"] = [REGEX101,REGEX102,REGEX103,REGEX104,REGEX105,REGEX106,REGEX1
                     REGEX121,REGEX122,REGEX123,REGEX124,REGEX125,REGEX126,REGEX127,REGEX128,REGEX129,REGEX130,\
                     REGEX131,REGEX132,REGEX133,REGEX134,REGEX135,REGEX136,REGEX137,REGEX138,REGEX139,REGEX140,\
                     REGEX141,REGEX142,REGEX143,REGEX144,REGEX145,REGEX146,REGEX147,REGEX148,REGEX149,REGEX150,\
-                    REGEX151,REGEX152,REGEX153,REGEX154,REGEX155,\
+                    REGEX151,REGEX152,REGEX153,REGEX154,REGEX155,REGEX156,REGEX157,REGEX158,REGEX159,REGEX160,\
+                    REGEX161,REGEX162,\
                     REGEX201,REGEX202,REGEX203,REGEX204,REGEX205,REGEX206,REGEX207,REGEX208,REGEX209,REGEX210,\
                     REGEX211]
 
