@@ -162,9 +162,17 @@ if options["parser_type"] is not None:
         pickle.dump(parser, f)
 
 
-# parse evalue_all log
-print("2.Parsing evalue_all log....")
+# parse all evalue logs
+print("2.Parsing all evalue log....")
 for evalue_file in ["evalue_all.txt"]:
+    print("Now processing "+evalue_file+".")
+    evaluefile_path = "evalue/" + evalue_file
+
+    options["log_format"] = " ".join([f"<{field}>" for field in options["log_format"].split(",")])
+    parser.parse(evaluefile_path)
+
+for evalue_file in options["evalue_files"]:
+
     print("Now processing "+evalue_file+".")
     evaluefile_path = "evalue/" + evalue_file
 
@@ -222,14 +230,3 @@ for idx in range(0,int(len(total_eventid_seq)/options["step_size"])):
 
 templates_seq_df = templates_seq_df.sort_values('cnt',ascending=False)
 templates_seq_df.to_csv("~/.output/aiia/tempaltes_seq_df.csv", index= False)
-
-
-#parse all evalue logs
-print("5.Now parsing all evalue logs....")
-for evalue_file in options["evalue_files"]:
-
-    print("Now processing "+evalue_file+".")
-    evaluefile_path = "evalue/" + evalue_file
-
-    options["log_format"] = " ".join([f"<{field}>" for field in options["log_format"].split(",")])
-    parser.parse(evaluefile_path)
