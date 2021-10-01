@@ -33,49 +33,49 @@ REGEX105=['^Loaded extensions:.*$','Loaded extensions'] # 对Loaded extensions�
 REGEX106=['^Update host state with instances:.*','Update host state with instances'] # 对Update host state with instances后面的参数要删除
 REGEX107=['^.*log_opt_values','log_opt_values'] # 删除所有log_opt_values之前的参数
 
-REGEX108=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*GET.*\"*\sstatus: 1\d{2}.*$','<GET_1XX> <GET_1XX> <GET_1XX>'] # 简化所有GET和POST的模版
-REGEX109=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*POST.*\"*\sstatus: 1\d{2}.*$','<POST_1XX> <POST_1XX> <POST_1XX>'] # 简化所有GET和POST的模版
-REGEX110=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*GET.*\"*\sstatus: 2\d{2}.*$','<GET_2XX> <GET_2XX> <GET_2XX>'] # 简化所有GET和POST的模版
-REGEX111=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*POST.*\"*\sstatus: 2\d{2}.*$','<POST_2XX> <POST_2XX> <POST_2XX>'] # 简化所有GET和POST的模版
-REGEX112=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*GET.*\"*\sstatus: 3\d{2}.*$','<GET_3XX> <GET_3XX> <GET_3XX>'] # 简化所有GET和POST的模版
-REGEX113=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*POST.*\"*\sstatus: 3\d{2}.*$','<POST_3XX> <POST_3XX> <POST_3XX>'] # 简化所有GET和POST的模版
-REGEX114=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*GET.*\"*\sstatus: 4\d{2}.*$','<GET_4XX> <GET_4XX> <GET_4XX>'] # 简化所有GET和POST的模版
-REGEX115=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*POST.*\"*\sstatus: 4\d{2}.*$','<POST_4XX> <POST_4XX> <POST_4XX>'] # 简化所有GET和POST的模版
-REGEX116=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*GET.*\"*\sstatus: 5\d{2}.*$','<GET_5XX> <GET_5XX> <GET_5XX>'] # 简化所有GET和POST的模版
-REGEX117=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*POST.*\"*\sstatus: 5\d{2}.*$','<POST_5XX> <POST_5XX> <POST_5XX>'] # 简化所有GET和POST的模版
-REGEX118=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*DELETE.*\"*\sstatus: 1\d{2}.*$','<DELETE_1XX> <DELETE_1XX> <DELETE_1XX>'] # 简化所有GET和POST的模版
-REGEX119=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*DELETE.*\"*\sstatus: 2\d{2}.*$','<DELETE_2XX> <DELETE_2XX> <DELETE_2XX>'] # 简化所有GET和POST的模版
-REGEX120=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*DELETE.*\"*\sstatus: 3\d{2}.*$','<DELETE_3XX> <DELETE_3XX> <DELETE_3XX>'] # 简化所有GET和POST的模版
-REGEX121=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*DELETE.*\"*\sstatus: 4\d{2}.*$','<DELETE_4XX> <DELETE_4XX> <DELETE_4XX>'] # 简化所有GET和POST的模版
-REGEX122=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*DELETE.*\"*\sstatus: 5\d{2}.*$','<DELETE_5XX> <DELETE_5XX> <DELETE_5XX>'] # 简化所有GET和POST的模版
+REGEX108=['^\"?\d+\.\d+\.\d+\.\d+.*\"*GET.*\"*\sstatus: 1\d{2}.*$','<GET_1XX> <GET_1XX> <GET_1XX>'] # 简化所有GET和POST的模版
+REGEX109=['^\"?\d+\.\d+\.\d+\.\d+.*\"*POST.*\"*\sstatus: 1\d{2}.*$','<POST_1XX> <POST_1XX> <POST_1XX>'] # 简化所有GET和POST的模版
+REGEX110=['^\"?\d+\.\d+\.\d+\.\d+.*\"*GET.*\"*\sstatus: 2\d{2}.*$','<GET_2XX> <GET_2XX> <GET_2XX>'] # 简化所有GET和POST的模版
+REGEX111=['^\"?\d+\.\d+\.\d+\.\d+.*\"*POST.*\"*\sstatus: 2\d{2}.*$','<POST_2XX> <POST_2XX> <POST_2XX>'] # 简化所有GET和POST的模版
+REGEX112=['^\"?\d+\.\d+\.\d+\.\d+.*\"*GET.*\"*\sstatus: 3\d{2}.*$','<GET_3XX> <GET_3XX> <GET_3XX>'] # 简化所有GET和POST的模版
+REGEX113=['^\"?\d+\.\d+\.\d+\.\d+.*\"*POST.*\"*\sstatus: 3\d{2}.*$','<POST_3XX> <POST_3XX> <POST_3XX>'] # 简化所有GET和POST的模版
+REGEX114=['^\"?\d+\.\d+\.\d+\.\d+.*\"*GET.*\"*\sstatus: 4\d{2}.*$','<GET_4XX> <GET_4XX> <GET_4XX>'] # 简化所有GET和POST的模版
+REGEX115=['^\"?\d+\.\d+\.\d+\.\d+.*\"*POST.*\"*\sstatus: 4\d{2}.*$','<POST_4XX> <POST_4XX> <POST_4XX>'] # 简化所有GET和POST的模版
+REGEX116=['^\"?\d+\.\d+\.\d+\.\d+.*\"*GET.*\"*\sstatus: 5\d{2}.*$','<GET_5XX> <GET_5XX> <GET_5XX>'] # 简化所有GET和POST的模版
+REGEX117=['^\"?\d+\.\d+\.\d+\.\d+.*\"*POST.*\"*\sstatus: 5\d{2}.*$','<POST_5XX> <POST_5XX> <POST_5XX>'] # 简化所有GET和POST的模版
+REGEX118=['^\"?\d+\.\d+\.\d+\.\d+.*\"*DELETE.*\"*\sstatus: 1\d{2}.*$','<DELETE_1XX> <DELETE_1XX> <DELETE_1XX>'] # 简化所有GET和POST的模版
+REGEX119=['^\"?\d+\.\d+\.\d+\.\d+.*\"*DELETE.*\"*\sstatus: 2\d{2}.*$','<DELETE_2XX> <DELETE_2XX> <DELETE_2XX>'] # 简化所有GET和POST的模版
+REGEX120=['^\"?\d+\.\d+\.\d+\.\d+.*\"*DELETE.*\"*\sstatus: 3\d{2}.*$','<DELETE_3XX> <DELETE_3XX> <DELETE_3XX>'] # 简化所有GET和POST的模版
+REGEX121=['^\"?\d+\.\d+\.\d+\.\d+.*\"*DELETE.*\"*\sstatus: 4\d{2}.*$','<DELETE_4XX> <DELETE_4XX> <DELETE_4XX>'] # 简化所有GET和POST的模版
+REGEX122=['^\"?\d+\.\d+\.\d+\.\d+.*\"*DELETE.*\"*\sstatus: 5\d{2}.*$','<DELETE_5XX> <DELETE_5XX> <DELETE_5XX>'] # 简化所有GET和POST的模版
 
-REGEX123=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*GET.*HTTP/\d\.\d\"*\s1\d{2}.*$','<GET_1XX> <GET_1XX> <GET_1XX>'] # 简化所有GET和POST的模版
-REGEX124=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*GET.*HTTP/\d\.\d\"*\s2\d{2}.*$','<GET_2XX> <GET_2XX> <GET_2XX>'] # 简化所有GET和POST的模版
-REGEX125=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*GET.*HTTP/\d\.\d\"*\s3\d{2}.*$','<GET_3XX> <GET_3XX> <GET_3XX>'] # 简化所有GET和POST的模版
-REGEX126=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*GET.*HTTP/\d\.\d\"*\s4\d{2}.*$','<GET_4XX> <GET_4XX> <GET_4XX>'] # 简化所有GET和POST的模版
-REGEX127=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*GET.*HTTP/\d\.\d\"*\s5\d{2}.*$','<GET_5XX> <GET_5XX> <GET_5XX>'] # 简化所有GET和POST的模版
-REGEX128=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*POST.*HTTP/\d\.\d\"*\s1\d{2}.*$','<POST_1XX> <POST_1XX> <POST_1XX>'] # 简化所有GET和POST的模版
-REGEX129=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*POST.*HTTP/\d\.\d\"*\s2\d{2}.*$','<POST_2XX> <POST_2XX> <POST_2XX>'] # 简化所有GET和POST的模版
-REGEX130=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*POST.*HTTP/\d\.\d\"*\s3\d{2}.*$','<POST_3XX> <POST_3XX> <POST_3XX>'] # 简化所有GET和POST的模版
-REGEX131=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*POST.*HTTP/\d\.\d\"*\s4\d{2}.*$','<POST_4XX> <POST_4XX> <POST_4XX>'] # 简化所有GET和POST的模版
-REGEX132=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*POST.*HTTP/\d\.\d\"*\s5\d{2}.*$','<POST_5XX> <POST_5XX> <POST_5XX>'] # 简化所有GET和POST的模版
-REGEX133=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*DELETE.*HTTP/\d\.\d\"*\s1\d{2}.*$','<DELETE_1XX> <DELETE_1XX> <DELETE_1XX>'] # 简化所有GET和POST的模版
-REGEX134=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*DELETE.*HTTP/\d\.\d\"*\s2\d{2}.*$','<DELETE_2XX> <DELETE_2XX> <DELETE_2XX>'] # 简化所有GET和POST的模版
-REGEX135=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*DELETE.*HTTP/\d\.\d\"*\s3\d{2}.*$','<DELETE_3XX> <DELETE_3XX> <DELETE_3XX>'] # 简化所有GET和POST的模版
-REGEX136=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*DELETE.*HTTP/\d\.\d\"*\s4\d{2}.*$','<DELETE_4XX> <DELETE_4XX> <DELETE_4XX>'] # 简化所有GET和POST的模版
-REGEX137=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*DELETE.*HTTP/\d\.\d\"*\s5\d{2}.*$','<DELETE_5XX> <DELETE_5XX> <DELETE_5XX>'] # 简化所有GET和POST的模版
+REGEX123=['^\"?\d+\.\d+\.\d+\.\d+.*\"*GET.*HTTP/\d\.\d\"*\s1\d{2}.*$','<GET_1XX> <GET_1XX> <GET_1XX>'] # 简化所有GET和POST的模版
+REGEX124=['^\"?\d+\.\d+\.\d+\.\d+.*\"*GET.*HTTP/\d\.\d\"*\s2\d{2}.*$','<GET_2XX> <GET_2XX> <GET_2XX>'] # 简化所有GET和POST的模版
+REGEX125=['^\"?\d+\.\d+\.\d+\.\d+.*\"*GET.*HTTP/\d\.\d\"*\s3\d{2}.*$','<GET_3XX> <GET_3XX> <GET_3XX>'] # 简化所有GET和POST的模版
+REGEX126=['^\"?\d+\.\d+\.\d+\.\d+.*\"*GET.*HTTP/\d\.\d\"*\s4\d{2}.*$','<GET_4XX> <GET_4XX> <GET_4XX>'] # 简化所有GET和POST的模版
+REGEX127=['^\"?\d+\.\d+\.\d+\.\d+.*\"*GET.*HTTP/\d\.\d\"*\s5\d{2}.*$','<GET_5XX> <GET_5XX> <GET_5XX>'] # 简化所有GET和POST的模版
+REGEX128=['^\"?\d+\.\d+\.\d+\.\d+.*\"*POST.*HTTP/\d\.\d\"*\s1\d{2}.*$','<POST_1XX> <POST_1XX> <POST_1XX>'] # 简化所有GET和POST的模版
+REGEX129=['^\"?\d+\.\d+\.\d+\.\d+.*\"*POST.*HTTP/\d\.\d\"*\s2\d{2}.*$','<POST_2XX> <POST_2XX> <POST_2XX>'] # 简化所有GET和POST的模版
+REGEX130=['^\"?\d+\.\d+\.\d+\.\d+.*\"*POST.*HTTP/\d\.\d\"*\s3\d{2}.*$','<POST_3XX> <POST_3XX> <POST_3XX>'] # 简化所有GET和POST的模版
+REGEX131=['^\"?\d+\.\d+\.\d+\.\d+.*\"*POST.*HTTP/\d\.\d\"*\s4\d{2}.*$','<POST_4XX> <POST_4XX> <POST_4XX>'] # 简化所有GET和POST的模版
+REGEX132=['^\"?\d+\.\d+\.\d+\.\d+.*\"*POST.*HTTP/\d\.\d\"*\s5\d{2}.*$','<POST_5XX> <POST_5XX> <POST_5XX>'] # 简化所有GET和POST的模版
+REGEX133=['^\"?\d+\.\d+\.\d+\.\d+.*\"*DELETE.*HTTP/\d\.\d\"*\s1\d{2}.*$','<DELETE_1XX> <DELETE_1XX> <DELETE_1XX>'] # 简化所有GET和POST的模版
+REGEX134=['^\"?\d+\.\d+\.\d+\.\d+.*\"*DELETE.*HTTP/\d\.\d\"*\s2\d{2}.*$','<DELETE_2XX> <DELETE_2XX> <DELETE_2XX>'] # 简化所有GET和POST的模版
+REGEX135=['^\"?\d+\.\d+\.\d+\.\d+.*\"*DELETE.*HTTP/\d\.\d\"*\s3\d{2}.*$','<DELETE_3XX> <DELETE_3XX> <DELETE_3XX>'] # 简化所有GET和POST的模版
+REGEX136=['^\"?\d+\.\d+\.\d+\.\d+.*\"*DELETE.*HTTP/\d\.\d\"*\s4\d{2}.*$','<DELETE_4XX> <DELETE_4XX> <DELETE_4XX>'] # 简化所有GET和POST的模版
+REGEX137=['^\"?\d+\.\d+\.\d+\.\d+.*\"*DELETE.*HTTP/\d\.\d\"*\s5\d{2}.*$','<DELETE_5XX> <DELETE_5XX> <DELETE_5XX>'] # 简化所有GET和POST的模版
 
-REGEX138=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*HEAD.*HTTP/\d\.\d\"*\s1\d{2}.*$','<HEAD_1XX> <HEAD_1XX> <HEAD_1XX>'] # 简化所有GET和POST的模版
-REGEX139=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*HEAD.*HTTP/\d\.\d\"*\s2\d{2}.*$','<HEAD_2XX> <HEAD_2XX> <HEAD_2XX>'] # 简化所有GET和POST的模版
-REGEX140=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*HEAD.*HTTP/\d\.\d\"*\s3\d{2}.*$','<HEAD_3XX> <HEAD_3XX> <HEAD_3XX>'] # 简化所有GET和POST的模版
-REGEX141=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*HEAD.*HTTP/\d\.\d\"*\s4\d{2}.*$','<HEAD_4XX> <HEAD_4XX> <HEAD_4XX>'] # 简化所有GET和POST的模版
-REGEX142=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*HEAD.*HTTP/\d\.\d\"*\s5\d{2}.*$','<HEAD_5XX> <HEAD_5XX> <HEAD_5XX>'] # 简化所有GET和POST的模版
+REGEX138=['^\"?\d+\.\d+\.\d+\.\d+.*\"*HEAD.*HTTP/\d\.\d\"*\s1\d{2}.*$','<HEAD_1XX> <HEAD_1XX> <HEAD_1XX>'] # 简化所有GET和POST的模版
+REGEX139=['^\"?\d+\.\d+\.\d+\.\d+.*\"*HEAD.*HTTP/\d\.\d\"*\s2\d{2}.*$','<HEAD_2XX> <HEAD_2XX> <HEAD_2XX>'] # 简化所有GET和POST的模版
+REGEX140=['^\"?\d+\.\d+\.\d+\.\d+.*\"*HEAD.*HTTP/\d\.\d\"*\s3\d{2}.*$','<HEAD_3XX> <HEAD_3XX> <HEAD_3XX>'] # 简化所有GET和POST的模版
+REGEX141=['^\"?\d+\.\d+\.\d+\.\d+.*\"*HEAD.*HTTP/\d\.\d\"*\s4\d{2}.*$','<HEAD_4XX> <HEAD_4XX> <HEAD_4XX>'] # 简化所有GET和POST的模版
+REGEX142=['^\"?\d+\.\d+\.\d+\.\d+.*\"*HEAD.*HTTP/\d\.\d\"*\s5\d{2}.*$','<HEAD_5XX> <HEAD_5XX> <HEAD_5XX>'] # 简化所有GET和POST的模版
 
-REGEX143=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*PUT.*HTTP/\d\.\d\"*\s1\d{2}.*$','<PUT_1XX> <PUT_1XX> <PUT_1XX>'] # 简化所有GET和POST的模版
-REGEX144=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*PUT.*HTTP/\d\.\d\"*\s2\d{2}.*$','<PUT_2XX> <PUT_2XX> <PUT_2XX>'] # 简化所有GET和POST的模版
-REGEX145=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*PUT.*HTTP/\d\.\d\"*\s3\d{2}.*$','<PUT_3XX> <PUT_3XX> <PUT_3XX>'] # 简化所有GET和POST的模版
-REGEX146=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*PUT.*HTTP/\d\.\d\"*\s4\d{2}.*$','<PUT_4XX> <PUT_4XX> <PUT_4XX>'] # 简化所有GET和POST的模版
-REGEX147=['^\"?\d+\.\d+\.\d+\.\d+.*(?!\s)\"*PUT.*HTTP/\d\.\d\"*\s5\d{2}.*$','<PUT_5XX> <PUT_5XX> <PUT_5XX>'] # 简化所有GET和POST的模版
+REGEX143=['^\"?\d+\.\d+\.\d+\.\d+.*\"*PUT.*HTTP/\d\.\d\"*\s1\d{2}.*$','<PUT_1XX> <PUT_1XX> <PUT_1XX>'] # 简化所有GET和POST的模版
+REGEX144=['^\"?\d+\.\d+\.\d+\.\d+.*\"*PUT.*HTTP/\d\.\d\"*\s2\d{2}.*$','<PUT_2XX> <PUT_2XX> <PUT_2XX>'] # 简化所有GET和POST的模版
+REGEX145=['^\"?\d+\.\d+\.\d+\.\d+.*\"*PUT.*HTTP/\d\.\d\"*\s3\d{2}.*$','<PUT_3XX> <PUT_3XX> <PUT_3XX>'] # 简化所有GET和POST的模版
+REGEX146=['^\"?\d+\.\d+\.\d+\.\d+.*\"*PUT.*HTTP/\d\.\d\"*\s4\d{2}.*$','<PUT_4XX> <PUT_4XX> <PUT_4XX>'] # 简化所有GET和POST的模版
+REGEX147=['^\"?\d+\.\d+\.\d+\.\d+.*\"*PUT.*HTTP/\d\.\d\"*\s5\d{2}.*$','<PUT_5XX> <PUT_5XX> <PUT_5XX>'] # 简化所有GET和POST的模版
 
 
 REGEX148=['^REQ: curl -g -i -X POST.* _http_log_request','<REQ_POST> <REQ_POST> <REQ_POST>'] # 简化所有REQ的模版
@@ -87,13 +87,13 @@ REGEX153=['^RESP: \[3\d{2}\].*$','<RESP_3XX> <RESP_3XX> <RESP_3XX>'] # 简化所
 REGEX154=['^RESP: \[4\d{2}\].*$','<RESP_4XX> <RESP_4XX> <RESP_4XX>'] # 简化所有RESP的模版
 REGEX155=['^RESP: \[5\d{2}\].*$','<RESP_5XX> <RESP_5XX> <RESP_5XX>'] # 简化所有RESP的模版
 
-REGEX156=['(?!^Action.*)calling method: <.*>$','<ActionParas> _process_stack <LogOccurAddr>'] # 简化<Action Parameters>
-REGEX157=['(?!^Attempting to reserve resources.*)Deltas: \{.*\}', 'Deltas: <DeltaParas>'] # 简化<DeltaParas>
-REGEX158=['(?!^Quotas for project.*)resource sync: \{.*\}', 'resource sync: <QuotasParas>'] # 简化<QuotasParas>
-REGEX159=['(?!^Created reservations\s)\[.*\]', '<RerserveParas>'] # 简化<RerserveParas>
-REGEX160=['(?!^Preparing filters for devices set)\(.*\)', '<DevicesSet>'] # 简化<DevicesSet>
-REGEX161=['(?!^Update host state with service dict.*)\{.*\}', '<ServiceDict>'] # 简化<ServiceDict>
-REGEX162=['(?!^Generated XML.*)\(.*\)(?=.*to_xml)', '<XMLParas>'] # 简化<XMLParas>
+REGEX156=['[cC]alling method.*(?=_process_stack)','Calling method: <Method> '] # 简化<Action Parameters>
+REGEX157=['Deltas: \{.*\}', 'Deltas: <DeltaParas>'] # 简化<DeltaParas>
+REGEX158=['resource sync: \{.*\}', 'resource sync: <QuotasParas>'] # 简化<QuotasParas>
+REGEX159=['(?<=^Created reservations\s)\[.*\]', '<RerserveParas>'] # 简化<RerserveParas>
+REGEX160=['(?<=^Preparing filters for devices set)\(.*\)', '<DevicesSet>'] # 简化<DevicesSet>
+REGEX161=['(?<=^Update host state with service dict:\s)\{.*\}', '<ServiceDict>'] # 简化<ServiceDict>
+REGEX162=['(?<=^Generated XML\s)\(.*\)(?=.*to_xml)', '<XMLParas>'] # 简化<XMLParas>
 
 # 对一些常见的参数进行匹配
 REGEX201= ['(0x)[0-9a-fA-F]+','<MemAddr>'] # 0xa829ce83
@@ -103,10 +103,10 @@ REGEX204=['^\(\d+\)',' <ProcessId>'] # (30102)
 REGEX205= ['\shttps?://([\w\.\:\d]+)(/[-_\w\.]+)*((\?).*)?(?=\s)',' <HTTPUri>'] # http://siels:1080/asdljw.json?aljsd=733&sldk=372
 REGEX206= ['\s(/[-_\w\.]+)+\:\d+$',' <LogOccurAddr>'] # /sdlj.dksd/cljs/a/ew.py:383
 REGEX207= ['\s(/[-_\w\.]+)+(\?).*(?=\s)',' <UriPath>'] # /v2.0/subnets.json?id=c197d80a-6716-46d7-b6a8-3fbf52d7bfc9
-REGEX208= ['((?![\s\(\'\"])(/?[-_\w\.]+)(/[-_\w\.]+){2,}(?=[\s\)\'\"]))|((?![\s])(/?[-_\w\.]+)(/[-_\w\.]+){2,}$)','<Path>'] # /sdlj.dksd/cljs/a/ew.py
+REGEX208= ['((?<=[\s\(\'\"])(/?[-_\w\.]+)(/[-_\w\.]+){2,}(?=[\s\)\'\"]))|((?<=[\s])(/?[-_\w\.]+)(/[-_\w\.]+){2,}$)','<Path>'] # /sdlj.dksd/cljs/a/ew.py
 REGEX209=['[\'\"]?([0-9a-fA-F]+-)+([0-9a-fA-F]+)[\'\"]?','<InstanceId>'] # '16d1f7bc-11f1-4d23-95af-f0dce3f61667'
 REGEX210=['[\'\"]?([0-9a-fA-F]{30,})[\'\"]?','<ID>'] # '16d1f7bc11f14d2395aff0dce3f61667'
-REGEX211=['(?!\s)ComputeNode\(.*\)(?=\s)','<ComputNode>'] #  ComputeNode(cpu_allocation_ratio=16.0) 
+REGEX211=['(?<=\s)ComputeNode\(.*\)(?=\s)','<ComputNode>'] #  ComputeNode(cpu_allocation_ratio=16.0) 
 
 
 
@@ -134,7 +134,7 @@ options["step_size"] = 1
 options["train_size"] = 0.7
 
 # evalue logs
-options["evalue_files"] = ["evalue-"+str(i)+".txt" for i in range(0,10)]
+options["evalue_files"] = ["evalue-"+str(i)+".txt" for i in range(0,1124)]
 
 # parser path
 options["parserPickle_path"] = "/root/.output/aiia/parser.pkl"
@@ -152,7 +152,7 @@ options["output_dir"] = os.path.join(options["output_dir"], options["dataset_nam
 if not os.path.exists(options["output_dir"]):
     os.makedirs(options["output_dir"], exist_ok=True)
 
-
+'''
 # parse normal logs
 if options["parser_type"] is not None:
     options["log_format"] = " ".join([f"<{field}>" for field in options["log_format"].split(",")])
@@ -163,7 +163,7 @@ if options["parser_type"] is not None:
 
     with open(options["parserPickle_path"], "wb") as f:
         pickle.dump(parser, f)
- 
+'''
 
 '''
 # split normal to train and valid set
@@ -184,7 +184,8 @@ with open(options["parserPickle_path"], "rb") as f:
     parser = pickle.load(f)
 
 #for evalue_file in options["evalue_files"]:
-for evalue_file in ["evalue_all.txt"]:
+#for evalue_file in ["evalue_all.txt"]:
+for evalue_file in ["evalue-1100.txt"]:
     print("Now processing "+evalue_file+".")
     evaluefile_path = "evalue/" + evalue_file
 
@@ -205,4 +206,3 @@ for evalue_file in options["evalue_files"]:
                         window_size=options["window_size"],
                         step_size=options["step_size"])
 '''
-

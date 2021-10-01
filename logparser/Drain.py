@@ -208,9 +208,20 @@ class LogParser:
                                '<LogOccurAddr>',
                                '<UriPath>',
                                '<Path>',
-                               '<Path>',
+                               '<Method>',
+                               '<DeltaParas>',
+                               '<QuotasParas>',
+                               '<RerserveParas>',
+                               '<DevicesSet>',
+                               '<ServiceDict>',
+                               '<XMLParas>',
+                               '<LockObject>',
                                '<InstanceId>']:
                     print("mask token be changed")
+                    #print(seq1)
+                    #print(seq2)
+                    #print(word)
+                    #print(seq2[i])
                 retVal.append('<*>')
 
             i += 1
