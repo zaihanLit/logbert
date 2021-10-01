@@ -1,14 +1,10 @@
-"""
-Pipelines for processing raw logs to structured data
-including sampling (optional), log parsing, log sequence generation by windowing, and train test splitting
-"""
 
 
 import os
 import pickle
+import pandas as pd
 
-from dataset import SimpleParserFactory, split_train_test_aiia, generate_test_set_aiia, sample_raw_data
-
+from dataset import SimpleParserFactory
 
 # define options
 options=dict()
@@ -129,9 +125,9 @@ options["max_child"] = 100
 options["tau"] = 0.5
 
 options["window_type"] = "sliding_aiia"
-options["window_size"] = 25
+options["window_size"] = 10
 options["step_size"] = 1
-options["train_size"] = 0.7
+
 
 # evalue logs
 options["evalue_files"] = ["evalue-"+str(i)+".txt" for i in range(0,1124)]
@@ -152,8 +148,9 @@ options["output_dir"] = os.path.join(options["output_dir"], options["dataset_nam
 if not os.path.exists(options["output_dir"]):
     os.makedirs(options["output_dir"], exist_ok=True)
 
-'''
+
 # parse normal logs
+print("1.Parsing normal log....")
 if options["parser_type"] is not None:
     options["log_format"] = " ".join([f"<{field}>" for field in options["log_format"].split(",")])
     parser = SimpleParserFactory.create_parser(options["data_dir"], options["output_dir"], options["parser_type"], options["log_format"],
@@ -163,46 +160,76 @@ if options["parser_type"] is not None:
 
     with open(options["parserPickle_path"], "wb") as f:
         pickle.dump(parser, f)
-'''
-
-'''
-# split normal to train and valid set
-
-split_train_test_aiia(data_dir=options["data_dir"],
-                    output_dir=options["output_dir"],
-                    log_file=options["log_file"],
-                    dataset_name=options["dataset_name"],
-                    window_type=options["window_type"],
-                    window_size=options["window_size"],
-                    step_size=options["step_size"],
-                    train_size=options["train_size"])
-'''
 
 
-# parse evalue logs
-with open(options["parserPickle_path"], "rb") as f:
-    parser = pickle.load(f)
-
-for evalue_file in options["evalue_files"]:
-#for evalue_file in ["evalue_all.txt"]:
-#for evalue_file in ["evalue-41.txt"]:
+# parse evalue_all log
+print("2.Parsing evalue_all log....")
+for evalue_file in ["evalue_all.txt"]:
     print("Now processing "+evalue_file+".")
     evaluefile_path = "evalue/" + evalue_file
 
     options["log_format"] = " ".join([f"<{field}>" for field in options["log_format"].split(",")])
     parser.parse(evaluefile_path)
 
+# extract new templates
+print("3.Extracting new templates....")
+normal_templates_df = pd.read_csv("/root/.output/aiia/normal.txt_templates.csv")
+normal_templates_set = set(normal_templates_df['EventId'])
 
-'''
-# generate test set for each evalue files
+new_templates_set = set()
 
+for evalue_file in  ["evalue_all.txt"]:
+    evaluefile_path = options["output_dir"]+"evalue/" + evalue_file + "_templates.csv"   
+    evalue_templates_df = pd.read_csv(evaluefile_path)
+    evalue_templates_set = set(evalue_templates_df['EventId'])
+    evalue_templates_set = evalue_templates_set - normal_templates_set
+    
+    new_templates_set = new_templates_set | evalue_templates_set
+
+# err_tempaltes_seq mining
+print("4.Error templates sequences mining....")
+evalue_structured_df = pd.read_csv("/root/.output/aiia/evalue/evalue_all.txt_structured.csv")
+total_eventid_seq = evalue_structured_df['EventId']
+
+start = 0
+end = start + options["window_size"]
+
+templates_seq_df = pd.DataFrame(columns=['seq','cnt'])
+
+for idx in range(0,int(len(total_eventid_seq)/options["step_size"])):
+
+    if end <= len(total_eventid_seq):
+        eventid_seq_set = set(total_eventid_seq.iloc[start:end])
+
+        eventid_seq_set = eventid_seq_set & new_templates_set
+
+        if len(eventid_seq_set)>=3:
+            isNewSeq = True
+            for i,row in templates_seq_df.iterrows():
+ 
+                if len(eventid_seq_set&row['seq']) >= max(len(eventid_seq_set)-1,len(row['seq'])-1,3):
+                    templates_seq_df.iloc[i,0] = eventid_seq_set&row['seq']
+                    templates_seq_df.iloc[i,1] += 1
+                    isNewSeq = False
+                    break
+            
+            if isNewSeq == True:
+                new_row = {'seq':eventid_seq_set, 'cnt':1}
+                templates_seq_df = templates_seq_df.append(new_row,ignore_index=True)
+
+    start = start + options["step_size"]
+    end = start + options["window_size"]
+
+templates_seq_df = templates_seq_df.sort_values('cnt',ascending=False)
+templates_seq_df.to_csv("~/.output/aiia/tempaltes_seq_df.csv", index= False)
+
+
+#parse all evalue logs
+print("5.Now parsing all evalue logs....")
 for evalue_file in options["evalue_files"]:
+
     print("Now processing "+evalue_file+".")
     evaluefile_path = "evalue/" + evalue_file
 
-    generate_test_set_aiia(output_dir=options["output_dir"],
-                        log_file=evaluefile_path,
-                        window_type=options["window_type"],
-                        window_size=options["window_size"],
-                        step_size=options["step_size"])
-'''
+    options["log_format"] = " ".join([f"<{field}>" for field in options["log_format"].split(",")])
+    parser.parse(evaluefile_path)

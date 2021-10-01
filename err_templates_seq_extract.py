@@ -58,15 +58,19 @@ for evalue_file in  ["evalue_all.txt"]:
     new_templates_set = new_templates_set | evalue_templates_set
 
 
-templates_seq_df = pd.read_csv("~/.output/aiia/tempaltes_seq_df.csv")
+templates_seq_df = pd.read_csv("~/.output/aiia/tempaltes_seq_df_2302.csv")
 
-err_seq_df = templates_seq_df.loc[templates_seq_df['cnt']>16,'seq']
+err_seq_df = templates_seq_df.loc[templates_seq_df['cnt']>15,'seq']
+
+err_token_set = set()
+for err_seq in err_seq_df:
+    err_token_set |= set(eval(err_seq))
 
 #err_seq_df = templates_seq_df['seq']
 
 for evalue_file in options["evalue_files"]:
 #for evalue_file in  ["evalue_all.txt"]:
-#for evalue_file in  ["evalue-1118.txt"]:
+#for evalue_file in  ["evalue-41.txt"]:
     evaluefile_path = options["output_dir"]+"evalue/" + evalue_file + "_structured.csv"   
     evalue_structured_df = pd.read_csv(evaluefile_path)
 
@@ -77,35 +81,54 @@ for evalue_file in options["evalue_files"]:
 
     start_time = time.time()
 
+    logDetail = list(evalue_structured_df['EventId'].apply(lambda v:1 if v in err_token_set else 0))
+
     for idx in range(0,int(len(evalue_structured_df)/options["step_size"])):
     #for idx in range(0,int(700/options["step_size"])):
 
         #print(idx)
+        if end > len(evalue_structured_df):
+            end = len(evalue_structured_df)
 
+        eventid_seq_set = set(evalue_structured_df['EventId'].iloc[start:end])
+
+        for err_seq_set in err_seq_df:
+            if eval(err_seq_set) == eval(err_seq_set) & eventid_seq_set:
+            #if err_seq_set == err_seq_set & eventid_seq_set:
+                #print(evalue_file + ";"+str(err_seq_set))
+                #print(start)
+
+                if predictResult == 'Normal':
+                    for i,token in enumerate(evalue_structured_df['EventId'].iloc[start:end]):
+                        if token in err_token_set:
+                            #print(token)
+                            if i == 0:
+                                StartLineNum = start + i
+                                while (token in err_token_set) and (StartLineNum >=0):
+                                    StartLineNum -= 1
+                                    token = evalue_structured_df['EventId'].iloc[StartLineNum]
+                                    #print(token)
+                                StartLineNum = StartLineNum + 4
+                            else:
+                                StartLineNum = start + i + 3
+                            #print(StartLineNum)
+                            break
+                predictResult = 'Anomaly'
+                #print(start)
+                #print(err_seq_set)
+                break
+        
+        #if predictResult == 'Anomaly':
+        #    break
         start = start + options["step_size"]
         #print(start)
         
         end = start + options["window_size"]
 
-        if end <= len(evalue_structured_df):
-            eventid_seq_set = set(evalue_structured_df['EventId'].iloc[start:end])
-
-            for err_seq_set in err_seq_df:
-                if eval(err_seq_set) == eval(err_seq_set) & eventid_seq_set:
-                #if err_seq_set == err_seq_set & eventid_seq_set:
-                    #print(evalue_file + ";"+str(err_seq_set))
-                    #print(start)
-                    if predictResult == 'Normal':
-                        for i,token in enumerate(evalue_structured_df['EventId'].iloc[start:end]):
-                            if token in new_templates_set:
-                                StartLineNum = start + i + 3
-                                break
-                    predictResult = 'Anomaly'
-                    break
-
     elapsed_time = time.time() - start_time
     #print('elapsed_time: {}'.format(elapsed_time))
-    print(evalue_file + "," +predictResult + "," +str(StartLineNum) + "," + str(int(elapsed_time*1000))+"ms")
+    #print(evalue_file[:-4] + "," +predictResult + "," +str(StartLineNum) + "," + str(logDetail) + "," + str(int(elapsed_time*1000))+"ms")
+    print(evalue_file[:-4] + "," +predictResult + "," +str(StartLineNum) + "," + str(int(elapsed_time*1000))+"ms")
 
 'f58326c9' in new_templates_set
 
@@ -144,6 +167,7 @@ for idx in range(0,int(len(total_eventid_seq)/options["step_size"])):
                     templates_seq_df.iloc[i,0] = eventid_seq_set&row['seq']
                     templates_seq_df.iloc[i,1] += 1
                     isNewSeq = False
+                    break
             
             if isNewSeq == True:
                 new_row = {'seq':eventid_seq_set, 'cnt':1}
@@ -152,7 +176,7 @@ for idx in range(0,int(len(total_eventid_seq)/options["step_size"])):
 
 templates_seq_df = templates_seq_df.sort_values('cnt',ascending=False)
 
-templates_seq_df.to_csv("~/.output/aiia/tempaltes_seq_df.csv", index= False)
+templates_seq_df.to_csv("~/.output/aiia/tempaltes_seq_df_1001.csv", index= False)
 
 
 '''

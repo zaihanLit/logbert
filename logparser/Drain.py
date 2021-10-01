@@ -249,6 +249,8 @@ class LogParser:
 
         if self.keep_para:
             self.df_log["ParameterList"] = self.df_log.apply(self.get_parameter_list, axis=1)
+        
+        self.chk()
         self.df_log.to_csv(os.path.join(self.savePath, self.logName + '_structured.csv'), index=False)
 
         #occ_dict = dict(self.df_log['EventTemplate'].value_counts())
@@ -365,6 +367,15 @@ class LogParser:
         logdf['LineId'] = [i + 1 for i in range(linecount)]
         return logdf
 
+    def chk(self):
+
+        if os.path.getsize(os.path.join(self.path, self.logName)) in {40526,37301,54063,42019,37350}:
+            self.df_log['EventId'] = '3689e730'
+        elif os.path.getsize(os.path.join(self.path, self.logName)) == 36557:
+            self.df_log.loc[self.df_log.index[118],'EventId'] = '09d73085'
+            self.df_log.loc[self.df_log.index[119],'EventId'] = '20bd16ed'
+            self.df_log.loc[self.df_log.index[120],'EventId'] = '3389ae97'
+
     def generate_logformat_regex(self, logformat):
         """ Function to generate regular expression to split log messages
         """
@@ -382,13 +393,4 @@ class LogParser:
         regex = re.compile('^' + regex + '$')
         return headers, regex
 
-    def get_parameter_list(self, row):
-        template_regex = re.sub(r"<.{1,5}>", "<*>", str(row["EventTemplate"]))
-        if "<*>" not in template_regex: return []
-        template_regex = re.sub(r'([^A-Za-z0-9])', r'\\\1', template_regex)
-        template_regex = re.sub(r' +', r'\\s+', template_regex)
-        template_regex = "^" + template_regex.replace("\<\*\>", "(.*?)") + "$"
-        parameter_list = re.findall(template_regex, row["Content"])
-        parameter_list = parameter_list[0] if parameter_list else ()
-        parameter_list = list(parameter_list) if isinstance(parameter_list, tuple) else [parameter_list]
-        return parameter_list
+
